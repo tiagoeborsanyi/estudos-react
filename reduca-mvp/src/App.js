@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Layout>
-        
+        <h3>Algum texto</h3>
       </Layout>
     </div>
   );
