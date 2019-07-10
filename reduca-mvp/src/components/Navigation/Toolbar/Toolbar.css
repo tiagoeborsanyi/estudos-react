@@ -29,6 +29,7 @@
 
 .NavIcon span {
     vertical-align: middle;
+    margin-left: 12px;
 }
 
 .IconLogin {
@@ -36,6 +37,11 @@
     height: 20px;
     margin: 3px;
     vertical-align: middle;
+}
+
+.NavIcon span:hover,
+.IconLogin:hover {
+    cursor: pointer;
 }
 
 @media (max-width: 499px) {
