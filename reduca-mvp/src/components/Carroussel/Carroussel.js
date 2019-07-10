@@ -10,7 +10,7 @@ const carroussel = props => (
                     <input type="radio" name="radio-buttons" className={classes.img1} id="img1" defaultChecked />
                     <li className={classes.slideContainer}>
                         <div className={classes.slideImage}>
-                            <img src={require('../../assets/icons/fc.png')} />
+                            <img src={require('../../assets/images/edu1.jpeg')} alt="imagetr 1" />
                         </div>
                         <div className={classes.carouselControls}>
                             <label htmlFor="img3" className={classes.prevSlide}>
@@ -24,10 +24,10 @@ const carroussel = props => (
                     <input type="radio" name="radio-buttons" className={classes.img2} id="img2" />
                     <li className={classes.slideContainer}>
                         <div className={classes.slideImage}>
-                            <img src={require('../../assets/icons/ytb.png')} />
+                            <img src={require('../../assets/images/edu2.png')} alt="imagemj 2" />
                         </div>
                         <div className={classes.carouselControls}>
-                            <label htmlFor="img-1" className={classes.prevSlide}>
+                            <label htmlFor="img1" className={classes.prevSlide}>
                                 <span>&lsaquo;</span>
                             </label>
                             <label htmlFor="img3" className={classes.nextSlide}>
@@ -38,7 +38,7 @@ const carroussel = props => (
                     <input type="radio" name="radio-buttons" className={classes.img3} id="img3" />
                     <li className={classes.slideContainer}>
                         <div className={classes.slideImage}>
-                            <img src={require('../../assets/icons/inst.png')} />
+                            <img src={require('../../assets/images/edu3.png')} alt="imagetg 3" />
                         </div>
                         <div className={classes.carouselControls}>
                             <label htmlFor="img2" className={classes.prevSlide}>
@@ -50,9 +50,9 @@ const carroussel = props => (
                         </div>
                     </li>
                     <div className={classes.carouselDots}>
-                        <label htmlFor="img1" className={classes.carouselDot+' '+classes.imgDot1} id={classes.imgDot1}></label>
-                        <label htmlFor="img2" className={classes.carouselDot+' '+classes.imgDot2} id={classes.imgDot2}></label>
-                        <label htmlFor="img3" className={classes.carouselDot+' '+classes.imgDot3} id={classes.imgDot3}></label>
+                        <label htmlFor="img1" className={classes.carouselDot+' '+classes.imgDot1} id="img1"></label>
+                        <label htmlFor="img2" className={classes.carouselDot+' '+classes.imgDot2} id="img2"></label>
+                        <label htmlFor="img3" className={classes.carouselDot+' '+classes.imgDot3} id="img3"></label>
                     </div>
                 </ul>
             </div>
