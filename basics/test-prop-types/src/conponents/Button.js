@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const button = ({children, handleClick}) => (
     <button onClick={handleClick}>
@@ -7,7 +8,7 @@ const button = ({children, handleClick}) => (
 );
 
 button.propTypes = {
-    
+    handleClick: PropTypes.func
 }
 
 export default button;
