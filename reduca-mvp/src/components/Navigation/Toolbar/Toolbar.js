@@ -6,7 +6,7 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 
 const toolbar = (props) => (
-    <div>
+    <div className={classes.containerNav}>
         <div className={classes.DesktopOnly+' '+classes.NavIcon}>
             <img src={require("../../../assets/icons/inst.png")} alt="icon instagram" className={classes.IconLogin} />
             <img src={require("../../../assets/icons/fc.png")} alt="icon facebook" className={classes.IconLogin} />
