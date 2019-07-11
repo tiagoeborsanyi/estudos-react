@@ -10,9 +10,11 @@ class Home extends Component {
             <div>
                 <Carroussel />
                 <h3 className={classes.tituloProjetos}>Projetos</h3>
-                <Card />
-                <Card />
-                <Card />
+                <div className={classes.groupCards}>
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
             </div>
         );
     }

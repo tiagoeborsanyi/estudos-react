@@ -1,5 +1,10 @@
 .tituloProjetos {
     text-align: center;
-    margin: 60px auto;
+    margin: 60px auto 40px auto;
     font-size: 40px;
+}
+
+.groupCards {
+    left: 10%;
+    position: relative;
 }
