@@ -1,10 +1,19 @@
+.containerNav {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 50px;
+}
+
 .Toolbar {
     height: 56px;
     width: 100%;
     position: fixed;
-    top: 0;
+    top: 30px;
     left: 0;
-    background-color: #548687;
+    background-color: #BCDDE2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,8 +30,35 @@
     height: 80%;
 }
 
+.NavIcon {
+    right: 25px;
+    top: 0;
+    position: fixed;
+    background-color: #fff;
+}
+
+.NavIcon span {
+    vertical-align: middle;
+    margin-left: 12px;
+}
+
+.IconLogin {
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    vertical-align: middle;
+}
+
+.NavIcon span:hover,
+.IconLogin:hover {
+    cursor: pointer;
+}
+
 @media (max-width: 499px) {
     .DesktopOnly {
         display: none;
+    }
+    .Toolbar {
+        top: 0;
     }
 }

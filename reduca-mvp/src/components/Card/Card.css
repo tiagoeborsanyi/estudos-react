@@ -1,0 +1,25 @@
+.container {
+    text-align: center;
+    width: 21%;
+    display: inline-block;
+    margin: 10px 25px;
+}
+
+.container img {
+    width: 100%;
+    height: 300px;
+}
+
+.container span {
+    text-align: justify;
+}
+
+.container a {
+    text-align: right;
+    margin-top: 5px;
+}
+
+.container a,
+.container span {
+    display: block;
+}

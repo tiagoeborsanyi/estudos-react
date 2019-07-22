@@ -5,7 +5,7 @@ import classes from './Logo.css';
 
 const logo = (props) => (
     <div className={classes.Logo} style={{height: props.height}}>
-        <span>LOGO</span>
+        <img src={require('../../assets/icons/logo.png')} />
     </div>
 );
 
