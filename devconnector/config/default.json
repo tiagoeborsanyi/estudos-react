@@ -1,0 +1,6 @@
+{
+  "mongoURI": "CAMINHO URI",
+  "jwtSecret": "secret",
+  "githubClientId": "",
+  "githubSecret": ""
+}
