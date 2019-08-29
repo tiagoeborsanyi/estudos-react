@@ -1,5 +1,5 @@
 {
-  "mongoURI": "CAMINHO URI",
+  "mongoURI": "mongodb://dev:tigo2605@ds257507.mlab.com:57507/tiagodevconnector2",
   "jwtSecret": "secret",
   "githubClientId": "",
   "githubSecret": ""
