@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from '../App.css';
+import style from '../../App.css';
 
 const Actions = ({ getRepos, getStarred }) => (
   <div className={style.actions}>

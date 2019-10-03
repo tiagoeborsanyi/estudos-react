@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Search from './search'
-import UserInfo from './user-info'
-import Actions from './actions'
-import Repos from './repos'
-import style from '../App.css';
+import Search from '../search/search'
+import UserInfo from '../user-info/user-info'
+import Actions from '../actions/actions'
+import Repos from '../repos/repos'
+import style from '../../App.css';
 
 const AppContent = ({
   userinfo,
