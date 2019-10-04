@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from '../../App.css';
+import '../../App.css';
 
 const Actions = ({ getRepos, getStarred }) => (
-  <div className={style.actions}>
+  <div className="actions">
     <button onClick={getRepos}>Ver repositórios</button>
     <button onClick={getStarred}>Ver favoritos</button>
   </div>
