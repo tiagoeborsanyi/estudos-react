@@ -4,6 +4,10 @@ const centerRule = ({total, activePage}) => {
     if (activePage -1 <= 0) {
         return 1
     }
+
+    if (activePage === total) {
+        return activePage -2
+    }
     return activePage - 1;
 }
 
@@ -23,7 +27,6 @@ const pagination = ({total, activePage}) => {
 
     let firstPage = pages[0];
     let secondPage = pages[1];
-    console.log(secondPage)
     if (secondPage === (firstPage+2)) {
         pages = [
             firstPage,
@@ -32,13 +35,15 @@ const pagination = ({total, activePage}) => {
         ]
     }
 
-    // if ((firstPage+1) !== secondPage) {
-    //     pages = [
-    //         firstPage,
-    //         "...",
-    //         ...pages.slice(2)
-    //     ]
-    // }
+    firstPage = pages[0];
+    secondPage = pages[1];
+    if (secondPage > (firstPage + 2)) {
+        pages = [
+            firstPage,
+            "...",
+            ...pages.slice(1)
+        ]
+    }
 
     let penultimatePage = pages[pages.length - 2];
     let lastPage = pages[pages.length - 1];
