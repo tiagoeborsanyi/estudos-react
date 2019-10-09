@@ -1,22 +1,19 @@
 'use strict';
 
 const centerRule = ({total, activePage}) => {
-    if (activePage -1 <= 0) {
-        return 1
-    }
-
-    if (activePage === total) {
-        return activePage -2
-    }
-    return activePage - 1;
+    return activePage - 1 <= 0 
+        ? 1 : activePage === total
+        ? activePage - 2 : activePage -1
 }
 
+const isNumber = value => typeof value === 'value';
+
 const pagination = ({total = 1, activePage = 1} = {}) => {
-    if (typeof total != 'number') {
+    if (isNumber(total)) {
         throw new TypeError('Total deve ser numero');
     }
 
-    if (typeof activePage != 'number') {
+    if (isNumber(activePage)) {
         throw new TypeError('activePage should be a number');
     }
 
