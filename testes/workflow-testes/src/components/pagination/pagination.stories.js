@@ -10,7 +10,8 @@ export default {
 }
 
 export const withoutProps = () => <Pagination 
-                                        total={10} />
+                                        total={10}
+                                        activePage={6} />
 
 withoutProps.story = {
     name: 'without props'
