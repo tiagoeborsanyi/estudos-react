@@ -1,5 +1,3 @@
-'use strict';
-
 const centerRule = ({total, activePage}) => {
     return activePage - 1 <= 0 
         ? 1 : activePage === total
