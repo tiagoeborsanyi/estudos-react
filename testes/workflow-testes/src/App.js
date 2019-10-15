@@ -3,11 +3,19 @@ import ajax from '@fdaciuk/ajax'
 import AppContent from './components/app-content/app-content'
 import style from './App.css';
 
+const initialReposState = {
+  repos: [],
+  pagination: {
+    total: 1,
+    activePage: 1
+  }
+}
+
 class App extends Component {
   state = {
       userinfo: null,
-      repos: [],
-      starred: [],
+      repos: initialReposState,
+      starred: initialReposState,
       isFetching: false,
       perPage: 3
     }
@@ -15,7 +23,6 @@ class App extends Component {
   getGitHubApiUrl (username, type, page = 1) {
     const internalUser = username ? `/${username}` : ''
     const internalType = type ? `/${type}` : ''
-    console.log(page);
     return `https://api.github.com/users${internalUser}${internalType}?per_page=${this.state.perPage}&page=${page}`
   }
 
@@ -38,8 +45,8 @@ class App extends Component {
             followers: result.followers,
             following: result.following
           },
-          repos: [],
-          starred: []
+          repos: initialReposState,
+          starred: initialReposState
         })
       })
       .always(() => this.setState({ isFetching: false }))
@@ -48,15 +55,17 @@ class App extends Component {
 
   getRepos (type, page) {
     return (e) => {
-      console.log('page: ', page)
       const username = this.state.userinfo.login
       ajax().get(this.getGitHubApiUrl(username, type, page))
         .then((result) => {
           this.setState({
-            [type]: result.map((repo) => ({
-              name: repo.name,
-              link: repo.html_url
-            }))
+            [type]: {
+              repos: result.map((repo) => ({
+                      name: repo.name,
+                      link: repo.html_url
+                    })),
+              pagination: this.state[type].pagination
+            } 
           })
         })
     }
