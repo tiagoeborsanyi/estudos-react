@@ -13,7 +13,8 @@ const AppContent = ({
   isFetching,
   handleSearch,
   getRepos,
-  getStarred
+  getStarred,
+  handlePagination
 }) => (
   <div className={style.app}>
     <Search isDisabled={isFetching} handleSearch={handleSearch} />
@@ -26,6 +27,7 @@ const AppContent = ({
         className={style.repos}
         title='Repositórios:'
         repos={repos}
+        handlePagination={(clicked) => handlePagination('repos', clicked) }
       />
     }
 
@@ -34,6 +36,7 @@ const AppContent = ({
         className={style.starred}
         title='Favoritos:'
         repos={starred}
+        handlePagination={(clicked) => handlePagination('starred', clicked) }
       />
     }
   </div>
