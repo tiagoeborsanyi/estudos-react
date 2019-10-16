@@ -56,7 +56,12 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
+    "strclass": "^2.0.9",
+    "highlight.js": "^9.12.0",
     "normalize.css": "^8.0.0",
+    "marked": "^0.3.19",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0",
     "prop-types": "^15.5.10",
