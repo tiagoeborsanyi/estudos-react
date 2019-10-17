@@ -2,15 +2,16 @@
 
 import React, { Component } from 'react'
 import marked from 'marked'
-import hljs from 'highlight.js'
 import MarkdownEditor from './markdown-editor'
 
 import './css/style.css'
 
-marked.setOptions({
-  highlight: (code) => {
-    return hljs.highlightAuto(code).value
-  }
+import('highlight.js').then(hljs => {
+  marked.setOptions({
+    highlight: (code) => {
+      return hljs.highlightAuto(code).value
+    }
+  })
 })
 
 class App extends Component {
@@ -33,13 +34,13 @@ class App extends Component {
 
   render () {
     return (
-      <MarkdownEditor 
-        value={this.state.value} 
+      <MarkdownEditor
+        value={this.state.value}
         handleChange={this.handleChange}
         getMarkup={this.getMarkup}
       />
     )
-  } 
-} 
+  }
+}
 
 export default App
