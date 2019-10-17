@@ -30,6 +30,17 @@ class App extends Component {
     this.getMarkup = () => {
       return { __html: marked(this.state.value) }
     }
+
+    this.onClicked = () => {
+      localStorage.setItem('md', this.state.value)
+    }
+  }
+
+  componentDidMount() {
+    const value = localStorage.getItem('md')
+    this.setState({
+      value
+    })
   }
 
   render () {
@@ -38,6 +49,7 @@ class App extends Component {
         value={this.state.value}
         handleChange={this.handleChange}
         getMarkup={this.getMarkup}
+        clicked={this.onClicked}
       />
     )
   }

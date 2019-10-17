@@ -4,16 +4,20 @@ import React, { PropTypes} from 'react'
 
 import './css/style.css'
 
-const MarkdownEditor = ({ value, handleChange, getMarkup }) => (
-  <div className='editor'>
+const MarkdownEditor = ({ value, handleChange, getMarkup, clicked }) => (
+  <section className='editor'>
+    <header>
+      <button onClick={clicked}>Salvar</button>
+    </header>
     <textarea value={value} onChange={handleChange} autoFocus />
-    <div className='view' dangerouslySetInnerHTML={getMarkup()} />
-  </div>
+    <article className='view' dangerouslySetInnerHTML={getMarkup()} />
+  </section>
 )
 
 MarkdownEditor.propTypes = {
   value: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired
+  handleChange: PropTypes.func.isRequired,
+  clicked: PropTypes.func.isRequired
 }
 
 export default MarkdownEditor
