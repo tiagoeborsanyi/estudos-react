@@ -38,10 +38,26 @@
   .perfil__user {
     margin-right: 0;
     position: relative;
-    left: 200px;
     vertical-align: middle;
     margin-top: auto;
     margin-bottom: auto;
+    width: 20%;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .perfil__user::before {
+      content: "\69";
+  }
+
+  .perfil__user span::after {
+      content: "\95";
+      font-family: "Font Awesome 5 Free";
+  }
+
+  .perfil__user span {
+      right: 60px;
+      position: absolute;
   }
 
   .perfil__user img {
@@ -64,7 +80,6 @@
   .mainNav__item span {
     color: #999;
     text-decoration: none;
-    font-weight: bold;
   }
   
   .mainNav__item a:hover,

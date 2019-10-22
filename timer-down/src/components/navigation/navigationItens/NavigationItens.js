@@ -13,7 +13,7 @@ const navigationItems = (props) => (
             </form>
         </li>
         <li className="mainNav__item perfil__user">
-            <span>minha conta</span>
+            <span>minha conta </span>
         </li>
     </ul>
 );
