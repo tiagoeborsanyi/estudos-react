@@ -1,0 +1,91 @@
+.mainNav__item {
+    margin: 0;
+    vertical-align: middle;
+    position: relative;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.mainNav__item img {
+    max-height: 45px;
+    margin-top: 5px;
+    border: 0;
+}
+
+.mainNav__items {
+    display: flex;
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav__busca {
+    width: 40%;
+    margin: auto 90px;
+}
+
+.nav__busca input {
+    border: none;
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    font-size: 15px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+}
+
+  .perfil__user {
+    margin-right: 0;
+    position: relative;
+    left: 200px;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .perfil__user img {
+      background: transparent;
+  }
+
+  .subList__relatorios_guia {
+    text-align: right;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  .mainNav__item a {
+    background-color: '#75a5ce';
+  }
+
+  .mainNav__item a,
+  .mainNav__item span {
+    color: #999;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .mainNav__item a:hover,
+  .mainNav__item span:hover {
+    color: #ccc;
+    cursor: pointer;
+  }
+
+  .input_find {
+    position: relative;
+  }
+
+  @media (max-width: 499px) {
+    .sideDrawer__logo a {
+        font-size: 25px;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 765px) {
+    .perfil__user {
+        left: 12px;
+      }
+}

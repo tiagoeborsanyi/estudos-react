@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Toolbar from './components/navigation/toolbar/toolbar';
 import Timer from './components/timer/Timer';
 import Card from './components/card/Card';
 
@@ -23,13 +24,16 @@ class App extends Component {
 
   render () {
     return (
-      <div className="App">
-        <Timer 
-          handleDateClick={this.handleDate}
-          valueDate={this.state.value}
-          rendererDisplay={this.renderer} />
-        <br /><br /><br />
-        <Card />
+      <div>
+        <Toolbar />
+        <div className="App">
+          <Timer 
+            handleDateClick={this.handleDate}
+            valueDate={this.state.value}
+            rendererDisplay={this.renderer} />
+          <br /><br /><br />
+          <Card />
+        </div>
       </div>
     )
   }
