@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Countdown from 'react-countdown-now';
 import './App.css';
+
+import Timer from './components/timer/Timer';
+import Card from './components/card/Card';
 
 class App extends Component {
   state = {
@@ -22,40 +24,12 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <h1>Timer</h1>
-        <input type="date" onChange={this.handleDate} />
+        <Timer 
+          handleDateClick={this.handleDate}
+          valueDate={this.state.value}
+          rendererDisplay={this.renderer} />
         <br /><br /><br />
-        <Countdown date={this.state.value} renderer={this.renderer} />
-        <br /><br /><br />
-
-        <article className="content">
-          <div className="item_grid">
-            <figure className="image">
-              <img src={require("./escalada.png")} />
-            </figure>
-            <div className="wrapper">
-              <header className="entry-content">
-                <a href="#">
-                  <time className="data">
-                    <span className="year">2019</span>
-                    <span className="day">30</span>
-                    <span className="month">Out</span>
-                  </time>
-                  <div className="titulo_evento">
-                    <h2 className="entry_title">Festival de montanha</h2>
-                  </div>
-                  <div className="clearfix">
-                  </div>
-                  <div className="row_info">
-                    <div className="citie">
-                      <span>São Paulo</span>
-                    </div>
-                  </div>
-                </a>
-              </header>
-            </div>
-          </div>
-        </article>
+        <Card />
       </div>
     )
   }
