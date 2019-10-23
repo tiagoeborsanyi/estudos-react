@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import marked from 'marked'
-import MarkdownEditor from './markdown-editor'
+import MarkdownEditor from './components/markdown-editor'
 
 import './css/style.css'
 
@@ -32,6 +32,7 @@ class App extends Component {
     }
 
     this.onClicked = () => {
+      console.log('save');
       localStorage.setItem('md', this.state.value)
     }
   }
@@ -41,6 +42,16 @@ class App extends Component {
     this.setState({
       value
     })
+  }
+
+  componentDidUpdate() {
+    clearInterval(this.timer);
+    this.timer = setTimeout(this.onClicked, 1000);
+  }
+
+  // caso o componente seja desmontado, limpamos o timer
+  componentWillUnmount() {
+    clearInterval(this.timer);
   }
 
   render () {
