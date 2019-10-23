@@ -16,7 +16,8 @@ passport.deserializeUser((id, done) => {
 passport.use(new GoogleStategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback'
+    callbackURL: '/auth/google/callback',
+    proxy: true
   },
   (accessToken, refreshToken, profile, done) => {
 
@@ -24,10 +25,11 @@ passport.use(new GoogleStategy({
       .then((existingUser) => {
         if (existingUser) {
           // we already have a record with the given profile id
+          console.log(existingUser)
           done(null, existingUser)
         } else {
           // we don's have a user record with this ID, make a new record
-          new User({ googleId: profile.id }).save().then(user => done(null, uer));
+          new User({ googleId: profile.id }).save().then(user => done(null, user));
         }
       })
   }
