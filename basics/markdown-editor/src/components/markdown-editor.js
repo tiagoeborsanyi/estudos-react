@@ -2,12 +2,12 @@
 
 import React, { PropTypes} from 'react'
 
-import Header from './markdown-editor-header';
+import Header from './markdown-editor-header'
 import '../css/style.css'
 
-const MarkdownEditor = ({ value, handleChange, getMarkup, clicked }) => (
+const MarkdownEditor = ({ value, handleChange, getMarkup, isSaving, handleRemove }) => (
   <section className='editor'>
-    <Header onClicked={clicked} />
+    <Header isSaving={isSaving} handleRemove={handleRemove} />
     <textarea value={value} onChange={handleChange} autoFocus />
     <article className='view' dangerouslySetInnerHTML={getMarkup()} />
   </section>
@@ -16,7 +16,7 @@ const MarkdownEditor = ({ value, handleChange, getMarkup, clicked }) => (
 MarkdownEditor.propTypes = {
   value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
-  clicked: PropTypes.func.isRequired,
+  isSaving: PropTypes.bool.isRequired,
   getMarkup: PropTypes.func.isRequired
 }
 
