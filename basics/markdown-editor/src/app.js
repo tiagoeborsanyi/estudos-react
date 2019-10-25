@@ -19,7 +19,7 @@ class App extends Component {
     super()
     this.state = {
       value: '',
-      isSaving: false
+      isSaving: true
     }
 
     this.handleChange = (e) => {
@@ -34,30 +34,43 @@ class App extends Component {
     }
 
     this.onClicked = () => {
-      localStorage.setItem('md', this.state.value)
-      this.setState({ isSaving: false })
+      if (this.state.isSaving) {
+        localStorage.setItem('md', this.state.value)
+        this.setState({ isSaving: false })
+      }
     }
 
     this.handleRemove = () => {
-      localStorage.removeItem('md');
+      localStorage.removeItem('md')
+      this.setState({value: ''})
     }
+
+    this.handleCreate = () => {
+      this.setState({value: ''})
+      this.textarea.focus()
+    }
+
+    this.textAreaRef = (node) => {
+      this.textarea = node
+    }
+
   }
 
   componentDidMount() {
     const value = localStorage.getItem('md')
     this.setState({
-      value
+      value: value || ''
     })
   }
 
   componentDidUpdate() {
-    clearInterval(this.timer);
-    this.timer = setTimeout(this.onClicked, 1000);
+    clearInterval(this.timer)
+    this.timer = setTimeout(this.onClicked, 1000)
   }
 
   // caso o componente seja desmontado, limpamos o timer
   componentWillUnmount() {
-    clearInterval(this.timer);
+    clearInterval(this.timer)
   }
 
   render () {
@@ -68,6 +81,8 @@ class App extends Component {
         handleChange={this.handleChange}
         getMarkup={this.getMarkup}
         handleRemove={this.handleRemove}
+        handleCreate={this.handleCreate}
+        textAreaRef={this.textAreaRef}
       />
     )
   }
