@@ -24,7 +24,7 @@ passport.use(new GoogleStategy({
     const existingUser = await User.findOne({ googleId: profile.id })
     if (existingUser) {
       // we already have a record with the given profile id
-      console.log(existingUser)
+      // console.log(existingUser)
       return done(null, existingUser)
     }
     // we don's have a user record with this ID, make a new record
