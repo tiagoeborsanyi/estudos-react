@@ -16,7 +16,10 @@ const navigationItems = (props) => (
             </form>
         </li>
         <li className="mainNav__item perfil__user">
-            <span>minha conta </span>
+            <Link to="/add_festival"><span>Adicionar </span></Link>
+        </li>
+        <li className="mainNav__item perfil__user">
+            <span>Login With Google </span>
         </li>
     </ul>
 );

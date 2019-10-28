@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "materialize-css": "^1.0.0",
     "react": "^16.10.2",
     "react-countdown-now": "^2.1.1",
     "react-dom": "^16.10.2",
