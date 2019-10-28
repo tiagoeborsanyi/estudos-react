@@ -27,11 +27,13 @@ class App extends Component {
       <div>
         <Toolbar />
         <div className="App">
-          <Timer 
-            handleDateClick={this.handleDate}
-            valueDate={this.state.value}
-            rendererDisplay={this.renderer} />
-          <br /><br /><br />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
           <Card />
         </div>
       </div>
