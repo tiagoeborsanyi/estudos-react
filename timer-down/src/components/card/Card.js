@@ -11,7 +11,7 @@ const Card = (props) => (
         </figure>
         <div className="wrapper">
             <header className="entry-content">
-            <Link to={`/${props.descricaoUrl}`}>
+            <Link to={`/${props.descricaoUrl}/${props.descricaoId}`}>
                 <time className="data">
                 <span className="year">2019</span>
                 <span className="day">30</span>
