@@ -1,16 +1,17 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import './Card.css';
 
-const Card = () => (
+const Card = (props) => (
     <article className="content">
         <div className="item_grid">
         <figure className="image">
-            <img src={require("./escalada.png")} />
+            <img src={require("./escalada.png")} alt="imagem card" />
         </figure>
         <div className="wrapper">
             <header className="entry-content">
-            <a href="#">
+            <Link to={`/${props.descricaoUrl}`}>
                 <time className="data">
                 <span className="year">2019</span>
                 <span className="day">30</span>
@@ -26,7 +27,7 @@ const Card = () => (
                     <span>São Paulo</span>
                 </div>
                 </div>
-            </a>
+            </Link>
             </header>
         </div>
         </div>

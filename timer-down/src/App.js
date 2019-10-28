@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import {Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import Toolbar from './components/navigation/toolbar/toolbar';
-import Timer from './components/timer/Timer';
-import Card from './components/card/Card';
+import Dash from './containers/dash/Dash';
+import Descricao from './components/Descricao/Descricao';
 
 class App extends Component {
   state = {
@@ -27,14 +28,10 @@ class App extends Component {
       <div>
         <Toolbar />
         <div className="App">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Switch>
+            <Route exact path="/" component={Dash} />
+            <Route path="/descricao" component={Descricao} />
+          </Switch>
         </div>
       </div>
     )
