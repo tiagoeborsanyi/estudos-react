@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Footer from '../footer/Footer';
 import './Descricao.css';
 //https://ticketagora.com.br/e/festival-da-montanha-2019-28813
 
@@ -114,6 +115,7 @@ const Descricao = (props) => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
