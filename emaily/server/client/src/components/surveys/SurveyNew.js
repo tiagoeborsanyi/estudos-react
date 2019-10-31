@@ -1,6 +1,5 @@
 // SurveyNew shows SurveyForm and SurveyReview
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import SurveyForm from './SurveyForm';
 
