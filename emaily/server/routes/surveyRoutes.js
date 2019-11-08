@@ -15,18 +15,22 @@ module.exports = app => {
     });
 
     app.post('/api/surveys/webhooks', async (req, res) => {
+        const p = new Path('/api/surveys/:surveyId/:choice');
+
         const events = _.map(req.body, ({ email, url }) => {
-            const pathname = new URL(url).pathname;
-            const p = new Path('/api/surveys/:surveyId/:choice');
-            const match = p.test(pathname);
-            console.log('match', match);
-            if (!!match) {
-                console.log(match);
+            const match = p.test(new URL(url).pathname);
+            // console.log('match', match);
+            if (match) {
+                // console.log(match);
                 return { email, surveyId: match.surveyId, choice: match.choice };
             }
         });
 
-        console.log(events);
+        const compactEvents = _.compact(events);
+        const uniqueEvents = _.uniqBy(compactEvents, 'email', 'surveyId');
+        console.log(uniqueEvents);
+
+        res.send({});
     });
 
     app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
